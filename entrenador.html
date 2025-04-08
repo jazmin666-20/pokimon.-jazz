@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenador de pokimon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a503e6af;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #trainer-container {
+            width: 300px;
+            background-color: #4a0677b2;
+            border: 2px solid #9603da;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        .pokemon {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #7004fd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .pokemon:hover {
+            background-color: #7401f88a;
+        }
+        #trainer-info {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        #pokemon-info {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Entrenador de pokimon</h1>
+<div id="trainer-container">
+    <div id="trainer-info">
+        <p>Nombre: jazz</p>
+        <p>Edad: </p>
+        <p>Ciudad: </p>
+    </div>
+    <div class="pokemon" onclick="showInfo('Charmander')">
+        Eevee
+        <img src="https://images.wikidexcdn.net/mwuploads/wikidex/thumb/f/f2/latest/20150621181400/Eevee.png/800px-Eevee.png" alt="Eevee">
+    </div>
+    <div class="pokimon" onclick="showInfo('Bulbasaur')">
+        Bulbasaur
+        <img src="https://img.pokemondb.net/artwork/large/bulbasaur.jpg" alt="Bulbasaur">
+    </div>
+    <div class="pokimon" onclick="showInfo('Squirtle')">
+        Squirtle
+        <img src="https://img.pokemondb.net/artwork/large/squirtle.jpg" alt="Squirtle">
+    </div>
+    <div id="pokimon-info"></div>
+</div>
+
+<script>
+    function showInfo(pokimon) {
+        let info = '';
+        switch (pokimon) {
+            case 'Pikachu':
+                info = 'Pikachu: Tipo Eléctrico, altura 0.4m, peso 6.0kg.';
+                break;
+            case 'Charmander':
+                info = 'Charmander: Tipo Fuego, altura 0.6m, peso 8.5kg.';
+                break;
+            case 'Bulbasaur':
+                info = 'Bulbasaur: Tipo Planta/Veneno, altura 0.7m, peso 6.9kg.';
+                break;
+            case 'Squirtle':
+                info = 'Squirtle: Tipo Agua, altura 0.5m, peso 9.0kg.';
+                break;
+            default:
+                info = 'Pokimon desconocido.';
+        }
+        document.getElementById('pokimon-info').textContent = info;
+    }
+</script>
+
+</body>
+</html>
